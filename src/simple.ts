@@ -1,13 +1,12 @@
 import "@blocksuite/presets/themes/affine.css";
 
-import { createEmptyDoc } from "@blocksuite/presets";
+import { createEmptyDoc, PageEditor } from "@blocksuite/presets";
 import { Text } from "@blocksuite/store";
-import { SimplePageEditor } from "./simple-page-editor";
 
 (async () => {
   // Init editor with default block tree
   const doc = createEmptyDoc().init();
-  const editor = new SimplePageEditor();
+  const editor = new PageEditor();
   editor.doc = doc;
   document.body.appendChild(editor);
 

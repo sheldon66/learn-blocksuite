@@ -5,15 +5,24 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  '@blocksuite/block-std':
+    specifier: 0.14.0-canary-202403271529-23e1978
+    version: 0.14.0-canary-202403271529-23e1978(@blocksuite/inline@0.14.0-canary-202403271529-23e1978)(@blocksuite/store@0.14.0-canary-202403261022-88f84e1)
   '@blocksuite/blocks':
     specifier: 0.14.0-canary-202403261022-88f84e1
     version: 0.14.0-canary-202403261022-88f84e1(yjs@13.6.14)
+  '@blocksuite/lit':
+    specifier: 0.14.0-canary-202403190850-3031049
+    version: 0.14.0-canary-202403190850-3031049(@blocksuite/block-std@0.14.0-canary-202403271529-23e1978)(@blocksuite/store@0.14.0-canary-202403261022-88f84e1)(yjs@13.6.14)
   '@blocksuite/presets':
     specifier: 0.14.0-canary-202403261022-88f84e1
     version: 0.14.0-canary-202403261022-88f84e1(yjs@13.6.14)
   '@blocksuite/store':
     specifier: 0.14.0-canary-202403261022-88f84e1
     version: 0.14.0-canary-202403261022-88f84e1(lit@3.1.2)(yjs@13.6.14)
+  lit:
+    specifier: ^3.1.2
+    version: 3.1.2
 
 devDependencies:
   typescript:
@@ -33,6 +42,21 @@ packages:
     dependencies:
       '@blocksuite/global': 0.14.0-canary-202403261022-88f84e1
       '@blocksuite/inline': 0.14.0-canary-202403261022-88f84e1(lit@3.1.2)(yjs@13.6.14)
+      '@blocksuite/store': 0.14.0-canary-202403261022-88f84e1(lit@3.1.2)(yjs@13.6.14)
+      lit: 3.1.2
+      lz-string: 1.5.0
+      w3c-keyname: 2.2.8
+      zod: 3.22.4
+    dev: false
+
+  /@blocksuite/block-std@0.14.0-canary-202403271529-23e1978(@blocksuite/inline@0.14.0-canary-202403271529-23e1978)(@blocksuite/store@0.14.0-canary-202403261022-88f84e1):
+    resolution: {integrity: sha512-lxNM//3ctPDpmRHjlwHGIYzgXdgSNno6c1W6hjZzU9teieeqw9HUs+mFZfOnNAu0L04n9KPIiVbe8u3oq0lcXg==}
+    peerDependencies:
+      '@blocksuite/inline': 0.14.0-canary-202403271529-23e1978
+      '@blocksuite/store': 0.14.0-canary-202403271529-23e1978
+    dependencies:
+      '@blocksuite/global': 0.14.0-canary-202403271529-23e1978
+      '@blocksuite/inline': 0.14.0-canary-202403271529-23e1978(lit@3.1.2)(yjs@13.6.14)
       '@blocksuite/store': 0.14.0-canary-202403261022-88f84e1(lit@3.1.2)(yjs@13.6.14)
       lit: 3.1.2
       lz-string: 1.5.0
@@ -91,9 +115,33 @@ packages:
       - yjs
     dev: false
 
+  /@blocksuite/global@0.14.0-canary-202403190850-3031049:
+    resolution: {integrity: sha512-Mp5QfCP0BzMEyCiq/8sFEIBTOmc/thp+laM6o9nB/FCKg1KSstXYiFbdN2seitX/3XLif/vK1/69iC3P3xlhfQ==}
+    dependencies:
+      zod: 3.22.4
+    dev: false
+
   /@blocksuite/global@0.14.0-canary-202403261022-88f84e1:
     resolution: {integrity: sha512-U7dA8uXbMQyiDwdlstpUoIdx0thFV9K4KEm1X/hnhwBAuK0Rti4vSS6fFX52W1VXq7wv9G0o05P/JJpqx6TipQ==}
     dependencies:
+      zod: 3.22.4
+    dev: false
+
+  /@blocksuite/global@0.14.0-canary-202403271529-23e1978:
+    resolution: {integrity: sha512-muxfdSFaHndqnqjkXxq0G103o5HxHiSuaWJpm/z45ZGTIVwtHJZbCnQsR5yd1MKJwBN66Y/daf1SN5QbxryH3Q==}
+    dependencies:
+      zod: 3.22.4
+    dev: false
+
+  /@blocksuite/inline@0.14.0-canary-202403190850-3031049(lit@3.1.2)(yjs@13.6.14):
+    resolution: {integrity: sha512-+ze3KqQkGVJbLHefT1Zeap0XtOii+IEY38TLdp5VA2tObadOQjpxJeBI827X04fheQi6UDJCQY3X1HRANwrKIA==}
+    peerDependencies:
+      lit: ^3.1.1
+      yjs: ^13
+    dependencies:
+      '@blocksuite/global': 0.14.0-canary-202403190850-3031049
+      lit: 3.1.2
+      yjs: 13.6.14
       zod: 3.22.4
     dev: false
 
@@ -107,6 +155,33 @@ packages:
       lit: 3.1.2
       yjs: 13.6.14
       zod: 3.22.4
+    dev: false
+
+  /@blocksuite/inline@0.14.0-canary-202403271529-23e1978(lit@3.1.2)(yjs@13.6.14):
+    resolution: {integrity: sha512-2leqI1UkiuL/9UWQKvuO+2rTiAAjqChWRUBQ49youwPaNW7wqOSMDTPoxLWd/w2AD2gk9Nvu50RentgzzqKbgw==}
+    peerDependencies:
+      lit: ^3.1.1
+      yjs: ^13
+    dependencies:
+      '@blocksuite/global': 0.14.0-canary-202403271529-23e1978
+      lit: 3.1.2
+      yjs: 13.6.14
+      zod: 3.22.4
+    dev: false
+
+  /@blocksuite/lit@0.14.0-canary-202403190850-3031049(@blocksuite/block-std@0.14.0-canary-202403271529-23e1978)(@blocksuite/store@0.14.0-canary-202403261022-88f84e1)(yjs@13.6.14):
+    resolution: {integrity: sha512-X8Qa2vLV43qdpswyzMZW5wL7rjeBnr9f7aQeIR4nfqYDgSecGRCApHikL1xJphX2xUDbfiWMOLlONMOrvT9J0Q==}
+    peerDependencies:
+      '@blocksuite/block-std': 0.14.0-canary-202403190850-3031049
+      '@blocksuite/store': 0.14.0-canary-202403190850-3031049
+    dependencies:
+      '@blocksuite/block-std': 0.14.0-canary-202403271529-23e1978(@blocksuite/inline@0.14.0-canary-202403271529-23e1978)(@blocksuite/store@0.14.0-canary-202403261022-88f84e1)
+      '@blocksuite/global': 0.14.0-canary-202403190850-3031049
+      '@blocksuite/inline': 0.14.0-canary-202403190850-3031049(lit@3.1.2)(yjs@13.6.14)
+      '@blocksuite/store': 0.14.0-canary-202403261022-88f84e1(lit@3.1.2)(yjs@13.6.14)
+      lit: 3.1.2
+    transitivePeerDependencies:
+      - yjs
     dev: false
 
   /@blocksuite/presets@0.14.0-canary-202403261022-88f84e1(yjs@13.6.14):
